@@ -1,13 +1,6 @@
 package advent.Y2019
 
-import scala.util.Using
-
 object Day3 {
-
-  val data = Using(scala.io.Source.fromFile("2019-day3-input.txt")) { source =>
-    val lines = source.getLines()
-    (lines.next(), lines.next())
-  }.get
 
   case class Point(x: Int, y: Int) {
     def -(p: Point): Int = Math.abs(x - p.x) + Math.abs(y - p.y)

@@ -7,10 +7,6 @@ object Day2 {
 
   type State = Vector[Int]
 
-  val data: State = Using(scala.io.Source.fromFile("day2-input.txt")) { reader =>
-    reader.getLines().toVector.flatMap(_.split(",")).map(_.toInt)
-  }.get.toVector
-
   @tailrec
   def compute(step: Int, state: State): State = {
     // println(s"Computing step $step")
