@@ -1,9 +1,10 @@
 package advent.Y2020
 
 import advent.Y2020.Day3.TreeMap
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TestDay3 extends FunSuite with Matchers {
+class TestDay3 extends AnyFunSuite with Matchers:
 
   val sampleData = """..##.......
                    |#...#...#..
@@ -38,4 +39,3 @@ class TestDay3 extends FunSuite with Matchers {
   test("Problem 2") {
     slopes.map(s => testTrees.countSlope(s._1,s._2)).foldRight(1L)(_ * _) shouldBe 5140884672L
   }
-}

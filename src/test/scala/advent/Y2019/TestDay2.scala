@@ -1,9 +1,10 @@
 package advent.Y2019
 
-import org.scalatest.{FunSuite, Matchers}
 import advent.Y2019.Day2._
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TestDay2 extends FunSuite with Matchers {
+class TestDay2 extends AnyFunSuite with Matchers:
 
   val program: State = advent.getDataWithTransform("data/2019-day2-input.txt")(_.split(",").map(_.toInt))
     .get.flatten.toVector
@@ -21,12 +22,11 @@ class TestDay2 extends FunSuite with Matchers {
   }
 
   test("Part 2") {
-    val inputs = for {
+    val inputs = for
       noun <- 0 to 98
       verb <- 0 to 98
       fixed = program.updated(1,noun).updated(2,verb)
       if compute(fixed)(0) == 19690720
-    } yield(noun * 100 + verb)
+    yield(noun * 100 + verb)
     inputs shouldBe Seq(5398)
   }
-}

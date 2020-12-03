@@ -1,9 +1,10 @@
 package advent.Y2020
 
 import advent.Y2020.Day2.Entry
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TestDay2 extends FunSuite with Matchers {
+class TestDay2 extends AnyFunSuite with Matchers:
 
   val data = advent.getDataWithTransform("data/2020-day2-input.txt")(Entry.apply).get
 
@@ -26,5 +27,3 @@ class TestDay2 extends FunSuite with Matchers {
   test("Part 2") {
     data.count(_.isValid2) shouldBe 688
   }
-
-}

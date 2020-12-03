@@ -1,8 +1,9 @@
 package advent.Y2019
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TestDay1 extends FunSuite with Matchers {
+class TestDay1 extends AnyFunSuite with Matchers:
   import Day1._
 
   val modules = advent.getDataWithTransform("data/2019-day1-input.txt")(_.toInt).get
@@ -27,5 +28,3 @@ class TestDay1 extends FunSuite with Matchers {
   test("Part 2") {
     modules.map(aggregateFuel).sum shouldBe 5244112
   }
-
-}

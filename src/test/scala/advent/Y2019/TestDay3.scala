@@ -1,15 +1,16 @@
 package advent.Y2019
 
-import org.scalatest.{FunSuite, Matchers}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
 
-class TestDay3 extends FunSuite with Matchers {
+
+class TestDay3 extends AnyFunSuite with Matchers:
 
   import Day3._
 
-  val data = {
+  val data =
     val inputs = advent.getData("data/2019-day3-input.txt").get
     (inputs(0),inputs(1)) // just two lines
-  }
 
   val sampleWires = Seq(
     ("R8,U5,L5,D3","U7,R6,D4,L4"),
@@ -36,4 +37,4 @@ class TestDay3 extends FunSuite with Matchers {
   test("Part 2") {
     (shortestSignal _).tupled(data) shouldBe 14228
   }
-}
+
