@@ -2,12 +2,11 @@ package advent.Y2020
 
 import scala.util.Try
 
-object Day4 {
+object Day4:
   
-  def isNumWith(f: Int => Boolean)(s: String): Boolean = {
+  def isNumWith(f: Int => Boolean)(s: String): Boolean =
     val n = Try(s.toInt).map(f)
     n.getOrElse(false)
-  }
   
   val hgtParser = "([0-9]+)(cm|in)".r
   val hclParser = "#[0-9a-f]{6}".r
@@ -31,18 +30,11 @@ object Day4 {
     "cid" -> { (_: String) => true }
   )
   
-  case class Passport(entries: Map[String,String]) {
+  case class Passport(entries: Map[String,String]):
     val hasAllFields = (passportEntries.keySet - "cid").forall(entries.contains(_))
     val isValid = (hasAllFields) && (entries.forall{(k,v) => passportEntries(k)(v)})
-  }
   
-  object Passport {
+  object Passport:
     val fieldReader = "([a-z]{3}):(.+)".r
-    def apply(data: String): Passport = {
+    def apply(data: String): Passport =
       Passport(data.split("[\n, ]").map{ _ match { case fieldReader(field,value) => field -> value } }.toMap)
-    }
-  }
-  
-}
-
-
