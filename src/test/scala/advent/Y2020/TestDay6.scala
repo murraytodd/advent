@@ -3,7 +3,7 @@ package advent.Y2020
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class TestDay6 extends AnyFunSuite with Matchers {
+class TestDay6 extends AnyFunSuite with Matchers:
   import Day6._  
 
   val testData = advent.getGroups("data/2020-day6-input.txt").get
@@ -39,5 +39,3 @@ class TestDay6 extends AnyFunSuite with Matchers {
   test("Part 2") {
     testData.map(allYes).sum shouldBe 3628
   }
-  
-}

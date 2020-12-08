@@ -3,7 +3,7 @@ package advent.Y2020
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class TestDay4 extends AnyFunSuite with Matchers {
+class TestDay4 extends AnyFunSuite with Matchers:
 
   import Day4._
   
@@ -85,4 +85,3 @@ class TestDay4 extends AnyFunSuite with Matchers {
     val passports = testData.mkString("\n").split("\n\n").map(Passport.apply)
     passports.count(_.isValid) shouldBe 133
   }
-}

@@ -3,7 +3,7 @@ package advent.Y2020
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class TestDay7 extends AnyFunSuite with Matchers {
+class TestDay7 extends AnyFunSuite with Matchers:
   import TestDay7._
   import Day7._
 
@@ -35,10 +35,8 @@ class TestDay7 extends AnyFunSuite with Matchers {
     implicit val rules: Rules = testData.map(Rule.apply).toMap
     Color("shiny","gold").requires shouldBe 3765
   }
-  
-}
 
-object TestDay7 {
+object TestDay7:
   val sampleData = """light red bags contain 1 bright white bag, 2 muted yellow bags.
                      |dark orange bags contain 3 bright white bags, 4 muted yellow bags.
                      |bright white bags contain 1 shiny gold bag.
@@ -58,4 +56,3 @@ object TestDay7 {
                       |dark violet bags contain no other bags.""".stripMargin
   
   val testData = advent.getData("data/2020-day7-input.txt").get
-}

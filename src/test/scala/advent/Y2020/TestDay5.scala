@@ -3,7 +3,7 @@ package advent.Y2020
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-class TestDay5 extends AnyFunSuite with Matchers {
+class TestDay5 extends AnyFunSuite with Matchers:
   import Day5._  
 
   val data = advent.getDataWithTransform("data/2020-day5-input.txt")(Seat.apply).get
@@ -25,5 +25,3 @@ class TestDay5 extends AnyFunSuite with Matchers {
     missing.size shouldBe 1
     missing.head shouldBe 592
   }
-
-}

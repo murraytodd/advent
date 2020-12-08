@@ -4,7 +4,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.EitherValues
 
-class TestDay8 extends AnyFunSuite with Matchers with EitherValues {
+class TestDay8 extends AnyFunSuite with Matchers with EitherValues:
 
   import Day8._
   
@@ -37,4 +37,3 @@ class TestDay8 extends AnyFunSuite with Matchers with EitherValues {
   test("Part 2") {
     testProgram.fix shouldBe Some((277,1303))
   }
-}
