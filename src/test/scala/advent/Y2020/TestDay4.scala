@@ -21,15 +21,15 @@ class TestDay4 extends AnyFunSuite with Matchers:
                      |hcl:#cfa07d eyr:2025 pid:166559648
                      |iyr:2011 ecl:brn hgt:59in""".stripMargin
   
-  val testData = advent.getData("data/2020-day4-input.txt").get
+  val testData = advent.getGroups("data/2020-day4-input.txt").get
 
   test("Part 1 Example") {
-    val passports = sampleData.split("\n\n").map(Passport.apply)
+    val passports = advent.toGrouped(sampleData).map(Passport.apply)
     passports.count(_.hasAllFields) shouldBe 2
   }
 
   test("Part 1") {
-    val passports = testData.mkString("\n").split("\n\n").map(Passport.apply)
+    val passports = testData.map(Passport.apply)
     passports.count(_.hasAllFields) shouldBe 245
   }  
   
@@ -77,11 +77,11 @@ class TestDay4 extends AnyFunSuite with Matchers:
                                  |pid:3556412378 byr:2007""".stripMargin
   
   test("Part 2 Sample Passports") {
-    sampleValidPassports.split("\n\n").map(Passport.apply).forall(_.isValid)
-    sampleInvalidPassports.split("\n\n").map(Passport.apply).forall(! _.isValid)
+    advent.toGrouped(sampleValidPassports).map(Passport.apply).forall(_.isValid)
+    advent.toGrouped(sampleInvalidPassports).map(Passport.apply).forall(! _.isValid)
   }
   
   test("Part 2") {
-    val passports = testData.mkString("\n").split("\n\n").map(Passport.apply)
+    val passports = testData.map(Passport.apply)
     passports.count(_.isValid) shouldBe 133
   }

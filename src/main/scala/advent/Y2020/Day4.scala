@@ -36,5 +36,6 @@ object Day4:
   
   object Passport:
     val fieldReader = "([a-z]{3}):(.+)".r
-    def apply(data: String): Passport =
-      Passport(data.split("[\n, ]").map{ _ match { case fieldReader(field,value) => field -> value } }.toMap)
+    def apply(lines: Seq[String]): Passport =
+      Passport(lines.flatMap(_.split(" ")).map{ _ match { case fieldReader(field,value) => field -> value } }.toMap)
+      //Passport(data.split("[\n, ]").map{ _ match { case fieldReader(field,value) => field -> value } }.toMap)
